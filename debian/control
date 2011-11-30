@@ -1,0 +1,12 @@
+Source: servercontrol-mod-postfwd2
+Section: admin
+Priority: optional
+Maintainer: Daniel Bäurer <daniel.baeurer@web.de>
+Build-Depends: debhelper (>= 4), perl (>= 5.10.0), servercontrol (>= 0.105)
+Standards-Version: 3.5.1
+Homepage: https://github.com/servercontrol
+
+Package: servercontrol-mod-postfwd2
+Architecture: all
+Depends: perl (>= 5.10.0), servercontrol (>= 0.105)
+Description: ServerControl postfwd2 Module

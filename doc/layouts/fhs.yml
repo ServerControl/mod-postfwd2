@@ -1,0 +1,32 @@
+Directories:
+   Base:
+      bin:
+         name: bin
+         chmod: 755
+         user: root
+         group: root
+   Configuration:
+         name: etc
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: root
+   Runtime:
+      pid:
+         name: var/run
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: root
+      log:
+         name: var/log
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: root
+Files:
+   Exec:
+      aped:
+         name: bin/postfwd2-<%= __PACKAGE__->get_name %>
+         link: <%= ServerControl::Schema->get('postfwd2') %>
+   Configuration:
+      conf:
+         name: etc/rules.cf
+         call: <% sub { } %>

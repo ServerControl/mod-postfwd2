@@ -1,0 +1,13 @@
+=pod
+
+This is the Postfwd2 Module for ServerControl.
+
+=head2 Dependencies
+
+=over 4
+
+=item *
+
+ServerControl >= 0.105
+
+=back
