@@ -63,6 +63,8 @@ sub start {
 sub stop {
 	my ($class) = @_;
 
+	my ($name, $path)       = ($class->get_name, $class->get_path);
+
         my $exec_file           = ServerControl::FsLayout->get_file("Exec", "postfwd2");
         my $conf_file           = ServerControl::FsLayout->get_file("Configuration", "conf");
 
@@ -90,6 +92,8 @@ sub reload {
 
 sub status {
         my ($class) = @_;
+
+	my ($name, $path)       = ($class->get_name, $class->get_path);
 
         my $exec_file           = ServerControl::FsLayout->get_file("Exec", "postfwd2");
         my $conf_file           = ServerControl::FsLayout->get_file("Configuration", "conf");
