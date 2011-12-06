@@ -5,11 +5,6 @@ Directories:
          chmod: 755
          user: root
          group: root
-   Configuration:
-         name: etc
-         chmod: 755
-         user: <%= ServerControl::Args->get->{'user'} %>
-         group: root
    Runtime:
       pid:
          name: var/run
@@ -21,9 +16,15 @@ Directories:
          chmod: 755
          user: <%= ServerControl::Args->get->{'user'} %>
          group: root
+   Configuration:
+      conf:
+         name: etc
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: root
 Files:
    Exec:
-      aped:
+      postfwd2:
          name: bin/postfwd2-<%= __PACKAGE__->get_name %>
          link: <%= ServerControl::Schema->get('postfwd2') %>
    Configuration:
