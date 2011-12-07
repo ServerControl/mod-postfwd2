@@ -33,6 +33,7 @@ sub help {
    printf "  %-30s%s\n", "--ip=", "Bind Postfwd2 on IP";
    printf "  %-30s%s\n", "--port=", "Postfwd2 listen on Port";
    printf "  %-30s%s\n", "--cacheid=", "CSV-separated list of request attributes to construct the request cache identifier";
+   printf "  %-30s%s\n", "--summary=", "Show stats every <i> seconds";
    print  "\n";
    printf "  %-30s%s\n", "--min_servers=", "Spawn at least <i> children";
    printf "  %-30s%s\n", "--max_servers=", "Do not spawn more than <i> children";
@@ -63,6 +64,7 @@ sub start {
       "--min_spare_servers " . ServerControl::Args->get->{"min_spare_servers"},
       "--max_spare_servers " . ServerControl::Args->get->{"max_spare_servers"},
       "--cacheid " . ServerControl::Args->get->{"cacheid"},
+      "--summary " . ServerControl::Args->get->{"summary"},
       "--logname $name",
    );
 
