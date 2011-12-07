@@ -34,6 +34,11 @@ sub help {
    printf "  %-30s%s\n", "--port=", "Postfwd2 listen on Port";
    printf "  %-30s%s\n", "--cacheid=", "CSV-separated list of request attributes to construct the request cache identifier";
    print  "\n";
+   printf "  %-30s%s\n", "--min_servers=", "spawn at least <i> children";
+   printf "  %-30s%s\n", "--max_servers=", "do not spawn more than <i> children";
+   printf "  %-30s%s\n", "--min_spare_servers=", "minimum idle children";
+   printf "  %-30s%s\n", "--max_spare_servers=", "maximum idle children";
+   print  "\n";
    printf "  %-30s%s\n", "--create", "Create the instance";
    printf "  %-30s%s\n", "--start", "Start the instance";
    printf "  %-30s%s\n", "--stop", "Stop the instance";
@@ -53,6 +58,10 @@ sub start {
       "--interface " . ServerControl::Args->get->{"ip"},
       "--port " . ServerControl::Args->get->{"port"},
       "--pidfile $path/" . ServerControl::FsLayout->get_directory("Runtime", "pid") . "/$name.pid",
+      "--min_servers " . ServerControl::Args->get->{"min_servers"},
+      "--max_servers " . ServerControl::Args->get->{"max_servers"},
+      "--min_spare_servers " . ServerControl::Args->get->{"min_spare_servers"},
+      "--max_spare_servers " . ServerControl::Args->get->{"max_spare_servers"},
       "--cacheid " . ServerControl::Args->get->{"cacheid"},
       "--logname $name",
    );
