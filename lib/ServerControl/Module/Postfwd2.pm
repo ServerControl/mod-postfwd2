@@ -34,10 +34,10 @@ sub help {
    printf "  %-30s%s\n", "--port=", "Postfwd2 listen on Port";
    printf "  %-30s%s\n", "--cacheid=", "CSV-separated list of request attributes to construct the request cache identifier";
    print  "\n";
-   printf "  %-30s%s\n", "--min_servers=", "spawn at least <i> children";
-   printf "  %-30s%s\n", "--max_servers=", "do not spawn more than <i> children";
-   printf "  %-30s%s\n", "--min_spare_servers=", "minimum idle children";
-   printf "  %-30s%s\n", "--max_spare_servers=", "maximum idle children";
+   printf "  %-30s%s\n", "--min_servers=", "Spawn at least <i> children";
+   printf "  %-30s%s\n", "--max_servers=", "Do not spawn more than <i> children";
+   printf "  %-30s%s\n", "--min_spare_servers=", "Minimum idle children";
+   printf "  %-30s%s\n", "--max_spare_servers=", "Maximum idle children";
    print  "\n";
    printf "  %-30s%s\n", "--create", "Create the instance";
    printf "  %-30s%s\n", "--start", "Start the instance";
